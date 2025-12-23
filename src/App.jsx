@@ -75,7 +75,7 @@ export default function App() {
       </main>
 
       <footer className="app__pie">
-        <span className="app__pie-texto">TechSpecs Manager · SPA (React + Fetch)</span>
+        <span className="app__pie-texto">CATALOGOTEK - Por Moisés Colmán</span>
       </footer>
     </div>
   );

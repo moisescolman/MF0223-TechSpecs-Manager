@@ -1,10 +1,7 @@
-const URL_BASE = import.meta.env.VITE_API_URL;
-const RECURSO = import.meta.env.VITE_RECURSO_SERVIDORES || "servidores";
+const URL_BASE = "https://694a58341282f890d2d861c2.mockapi.io/api";
+const RECURSO = "servidores";
 
 function obtenerUrlRecurso() {
-  if (!URL_BASE) {
-    throw new Error("Falta VITE_API_URL. Crea un .env con la URL de MockAPI.");
-  }
   return `${URL_BASE.replace(/\/$/, "")}/${RECURSO}`;
 }
 

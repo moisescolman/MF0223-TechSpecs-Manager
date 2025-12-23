@@ -91,13 +91,13 @@ export default function FormularioServidor({ onCrearServidor }) {
           <legend className="formulario__legend">CPU</legend>
 
           <div className="formulario__fila">
-            <div className="formulario__grupo">
+            <div className="formulario__grupo formulario__grupo--compacto">
               <label className="formulario__etiqueta" htmlFor="cpuNucleos">
                 Núcleos (mín. 2)
               </label>
               <input
                 id="cpuNucleos"
-                className={`formulario__control ${
+                className={`formulario__control formulario__control--compacto ${
                   errores.cpuNucleos ? "formulario__control--invalido" : ""
                 }`}
                 type="number"
@@ -189,13 +189,13 @@ export default function FormularioServidor({ onCrearServidor }) {
           <legend className="formulario__legend">Almacenamiento</legend>
 
           <div className="formulario__fila">
-            <div className="formulario__grupo">
+            <div className="formulario__grupo formulario__grupo--compacto">
               <label className="formulario__etiqueta" htmlFor="almacenamientoTipo">
                 Tipo
               </label>
               <select
                 id="almacenamientoTipo"
-                className="formulario__control"
+                className="formulario__control formulario__control--compacto"
                 value={formulario.almacenamientoTipo}
                 onChange={(e) =>
                   actualizarCampo("almacenamientoTipo", e.target.value)
@@ -206,7 +206,7 @@ export default function FormularioServidor({ onCrearServidor }) {
               </select>
             </div>
 
-            <div className="formulario__grupo">
+            <div className="formulario__grupo formulario__grupo--compacto">
               <label
                 className="formulario__etiqueta"
                 htmlFor="almacenamientoCapacidadTB"
@@ -215,7 +215,7 @@ export default function FormularioServidor({ onCrearServidor }) {
               </label>
               <input
                 id="almacenamientoCapacidadTB"
-                className={`formulario__control ${
+                className={`formulario__control formulario__control--compacto ${
                   errores.almacenamientoCapacidadTB
                     ? "formulario__control--invalido"
                     : ""
