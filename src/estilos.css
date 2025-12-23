@@ -1,13 +1,13 @@
 /* ===== Base ===== */
 :root {
-  --borde: rgba(0, 0, 0, 0.14);
-  --fondo: #f5f5f7;
-  --panel: #ffffff;
-  --texto: #1f1f23;
-  --muted: rgba(31, 31, 35, 0.65);
-  --accent: #f57c00;
-  --peligro: #e53935;
-  --ok: #2d9c55;
+  --borde: rgba(255, 255, 255, 0.08);
+  --fondo: #0d1017;
+  --panel: #161b28;
+  --texto: #f4f6fb;
+  --muted: rgba(244, 246, 251, 0.7);
+  --accent: #e95420;
+  --peligro: #ff6b6b;
+  --ok: #3ad97a;
 }
 
 * { box-sizing: border-box; }
@@ -15,7 +15,8 @@ html, body { height: 100%; }
 body {
   margin: 0;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background: rgb(252, 208, 151);
+  background: radial-gradient(900px 520px at 30% 0%, rgba(233, 84, 32, 0.16), transparent),
+    var(--fondo);
   color: var(--texto);
 }
 
@@ -65,7 +66,7 @@ body {
 /* ===== Encabezado ===== */
 .encabezado {
   border-bottom: 1px solid var(--borde);
-  background: rgba(0, 0, 0, 0.02);
+  background: rgba(0, 0, 0, 0.25);
 }
 
 .encabezado__contenedor {
@@ -94,7 +95,7 @@ body {
 /* ===== Botones ===== */
 .boton {
   border: 1px solid var(--borde);
-  background: rgba(0, 0, 0, 0.02);
+  background: rgba(255, 255, 255, 0.04);
   color: var(--texto);
   padding: 10px 12px;
   cursor: pointer;
@@ -106,15 +107,15 @@ body {
 .boton:disabled { opacity: 0.6; cursor: not-allowed; }
 
 .boton--primario {
-  border-color: rgba(245, 124, 0, 0.6);
-  background: rgba(245, 124, 0, 0.16);
+  border-color: rgba(233, 84, 32, 0.7);
+  background: rgba(233, 84, 32, 0.2);
 }
 
-.boton--secundario { background: rgba(0, 0, 0, 0.04); }
+.boton--secundario { background: rgba(255, 255, 255, 0.06); }
 
 .boton--peligro {
-  border-color: rgba(229, 57, 53, 0.55);
-  background: rgba(229, 57, 53, 0.14);
+  border-color: rgba(255, 107, 107, 0.55);
+  background: rgba(255, 107, 107, 0.12);
 }
 
 /* ===== Alertas ===== */
@@ -122,11 +123,12 @@ body {
   border: 1px solid var(--borde);
   padding: 10px 12px;
   margin-bottom: 12px;
+  background: rgba(255, 255, 255, 0.02);
 }
 
 .alerta--error {
-  border-color: rgba(229, 57, 53, 0.45);
-  background: rgba(229, 57, 53, 0.08);
+  border-color: rgba(255, 107, 107, 0.45);
+  background: rgba(255, 107, 107, 0.08);
 }
 
 /* ===== Formulario ===== */
@@ -159,7 +161,7 @@ body {
 
 .formulario__control {
   border: 1px solid var(--borde);
-  background: #ffffff;
+  background: #0f131d;
   color: var(--texto);
   padding: 10px 10px;
   width: 100%;
@@ -181,7 +183,7 @@ body {
 .formulario__error {
   margin: 0;
   font-size: 12px;
-  color: #ffb1b2;
+  color: #ffb6b6;
 }
 
 .formulario__fieldset {
@@ -212,12 +214,12 @@ body {
 .resumen {
   border: 1px solid var(--borde);
   padding: 12px;
-  background: rgba(0, 0, 0, 0.02);
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .resumen--peligro {
-  border-color: rgba(229, 57, 53, 0.55);
-  background: rgba(229, 57, 53, 0.07);
+  border-color: rgba(255, 107, 107, 0.55);
+  background: rgba(255, 107, 107, 0.07);
 }
 
 .resumen__fila {
@@ -271,7 +273,7 @@ body {
 .tarjeta {
   border: 1px solid var(--borde);
   padding: 12px;
-  background: #fafafa;
+  background: #111622;
 }
 
 .tarjeta__cabecera {
@@ -288,8 +290,8 @@ body {
 }
 
 .tarjeta__badge {
-  border: 1px solid rgba(245, 124, 0, 0.55);
-  background: rgba(245, 124, 0, 0.16);
+  border: 1px solid rgba(233, 84, 32, 0.6);
+  background: rgba(233, 84, 32, 0.16);
   padding: 6px 8px;
   font-size: 12px;
   color: var(--texto);

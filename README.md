@@ -1,39 +1,45 @@
-# TechSpecs Manager (React + Vite)
+# TechSpecs Manager (React + Vite + MockAPI)
 
-SPA para gestionar un catálogo de configuraciones de hardware (servidores) con **GET/POST/DELETE** usando **MockAPI.io**.
+SPA para gestionar un catálogo de configuraciones de hardware (servidores) con **GET / POST / DELETE** usando **MockAPI.io**.
+Cumple el enfoque de “sin refresh” (SPA) y muestra los servidores en formato de **tarjetas**.
+
+## Funcionalidades
+- **GET**: carga inicial de servidores desde MockAPI y renderizado de cards.
+- **POST**: alta de servidor desde formulario (sin recargar la página).
+- **DELETE**: eliminación de servidor desde cada tarjeta (sin recargar la página).
+
+## Reglas y validaciones
+- CPU: **mínimo 2 núcleos**
+- RAM: **mínimo 4 GB**
+- Almacenamiento: **capacidad mínima 1 TB**
+- Presupuesto: suma **CPU + RAM + Almacenamiento** ≤ **700 €**
+- El presupuesto se calcula automáticamente a partir de los 3 precios (CPU, RAM, almacenamiento).
 
 ## Requisitos
 - Node.js (LTS recomendado)
+- (Opcional) Docker, para ejecutar en contenedor
 
-## Configuración
-1. Instala dependencias:
-   ```bash
-   npm install
-   ```
+## Configuración de MockAPI
+1. En MockAPI.io crea un proyecto.
+2. Crea un recurso llamado: **`servidores`**
+3. Endpoint típico del proyecto:
+   - `https://TU_ID.mockapi.io/api/servidores`
 
-2. Crea un archivo `.env` en la raíz (puedes copiar `.env.example`) y configura tu MockAPI:
-   ```bash
-   VITE_API_URL=https://TU_MOCKAPI.mockapi.io/api/v1
-   VITE_RECURSO_SERVIDORES=servidores
-   ```
-
-3. Arranca en local:
-   ```bash
-   npm run dev
-   ```
-
-## MockAPI.io
-Crea un recurso llamado `servidores`. La app enviará/leerá campos como:
+Campos que la app envía/lee (recomendado):
 - `nombreServidor`
 - `cpuNucleos`, `cpuPrecio`
 - `ramGB`, `ramPrecio`
 - `almacenamientoTipo`, `almacenamientoCapacidadTB`, `almacenamientoPrecio`
 - `presupuestoTotal`
 
-## Docker (producción)
-Construir y ejecutar:
-```bash
-docker build -t techspecs-manager .
-docker run -p 8080:80 techspecs-manager
-```
-Abrir: http://localhost:8080
+## IMPORTANTE (sin .env)
+Este proyecto **NO usa `.env`**.  
+La URL de MockAPI está definida directamente en el archivo:
+
+- `src/servicios/api.js`
+
+Ahí debes ajustar estas constantes si cambias de proyecto MockAPI:
+
+```js
+const URL_BASE = "https://TU_ID.mockapi.io/api";
+const RECURSO = "servidores";
