@@ -1,10 +1,10 @@
 /* ===== Base ===== */
 :root {
-  --borde: rgba(255, 255, 255, 0.08);
-  --fondo: #0d1017;
-  --panel: #161b28;
-  --texto: #f4f6fb;
-  --muted: rgba(244, 246, 251, 0.7);
+  --borde: rgba(255, 255, 255, 0.1);
+  --fondo: #050506;
+  --panel: #0b0b0e;
+  --texto: #f5f7fc;
+  --muted: rgba(245, 247, 252, 0.65);
   --accent: #e95420;
   --peligro: #ff6b6b;
   --ok: #3ad97a;
@@ -15,8 +15,7 @@ html, body { height: 100%; }
 body {
   margin: 0;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background: radial-gradient(900px 520px at 30% 0%, rgba(233, 84, 32, 0.16), transparent),
-    var(--fondo);
+  background: var(--fondo);
   color: var(--texto);
 }
 
@@ -66,7 +65,7 @@ body {
 /* ===== Encabezado ===== */
 .encabezado {
   border-bottom: 1px solid var(--borde);
-  background: rgba(0, 0, 0, 0.25);
+  background: rgba(0, 0, 0, 0.35);
 }
 
 .encabezado__contenedor {
@@ -161,11 +160,11 @@ body {
 
 .formulario__control {
   border: 1px solid var(--borde);
-  background: #0f131d;
+  background: #0a0a0c;
   color: var(--texto);
   padding: 10px 10px;
   width: 100%;
-  max-width: 100%;
+  max-width: 320px;
   outline: none;
 }
 
@@ -214,7 +213,7 @@ body {
 .resumen {
   border: 1px solid var(--borde);
   padding: 12px;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.02);
 }
 
 .resumen--peligro {
@@ -273,7 +272,7 @@ body {
 .tarjeta {
   border: 1px solid var(--borde);
   padding: 12px;
-  background: #111622;
+  background: var(--panel);
 }
 
 .tarjeta__cabecera {

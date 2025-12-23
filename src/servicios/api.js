@@ -16,15 +16,20 @@ async function manejarRespuesta(respuesta) {
 }
 
 export async function apiObtenerServidores() {
-  const url = obtenerUrlRecurso();
+  const respuesta = await fetch(obtenerUrlRecurso(), { method: "GET" });
+  const datos = await manejarRespuesta(respuesta);
 
-  const respuesta = await fetch(url, {
-    method: "GET",
-    headers: { "Content-Type": "application/json" }
+  const normalizados = (Array.isArray(datos) ? datos : []).map((s) => {
+    const tipo = String(s.almacenamientoTipo || "").toUpperCase();
+    const tipoNormalizado =
+      tipo.includes("HDD") ? "HDD" :
+      tipo.includes("SSD") ? "SSD" :
+      "SSD"; // valor por defecto
+
+    return { ...s, almacenamientoTipo: tipoNormalizado };
   });
 
-  const datos = await manejarRespuesta(respuesta);
-  return Array.isArray(datos) ? datos : [];
+  return normalizados;
 }
 
 export async function apiCrearServidor(payload) {
